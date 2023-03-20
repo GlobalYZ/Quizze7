@@ -1,11 +1,13 @@
 from unittest import TestCase
 
 from muyang_and_nicole import replace_all
+
+
 class Test(TestCase):
     def test_replace_all_output_is_created(self):
         replace_all("test.txt", "output.txt", "cat", "dog")
-        with open("output.txt") as result:
-            content = result.read()
+        with open("output.txt") as content:
+            result = content.read()
         expected_value = True
         if result:
             actual_value = True
@@ -15,8 +17,8 @@ class Test(TestCase):
 
     def test_replace_all_output_no_search_term(self):
         replace_all("test.txt", "output.txt", "cat", "dog")
-        with open("output.txt") as result:
-            content = result.read()
+        with open("output.txt") as content:
+            result = content.read()
             actual_value = "cat" in result
         expected_value = False
         self.assertEqual(expected_value, actual_value)
