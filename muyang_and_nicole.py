@@ -16,7 +16,8 @@ def replace_all(input_file, output_file, search, replace):
     :param replace: a string that needs to replace the search parameter
     :precondition: the input file that input_file parameter points to can not be empty
     :precondition: the output file the input_file parameter points to must be empty before the function is called
-    :postcondition: the content with all given search word replaced correctly, and generated to the defined output file.
+    :postcondition: the content with all given search word replaced correctly, generated to the defined output file
+    :postcondition: returns the correct number of replacements
     :return: number of times the searched word is replaced, as an integer
     """
     with open(input_file) as file_object_input:
