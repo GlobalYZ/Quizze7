@@ -14,15 +14,19 @@ def replace_all(input_file, output_file, search, replace):
     :param replace:
     :return:
     """
-    with open(input_file) as file_object:
-        new_file = file_object.read()
-    print(new_file)
+    with open(input_file) as file_object_input:
+        new_file = file_object_input.read()
+    replace_count = new_file.count(search)
+    new_file = new_file.replace(search, replace)
+    with open(output_file, "w") as file_object_output:
+        file_object_output.write(new_file)
+    return replace_count
+
 
 def main():
     """
     Drives the program.
     """
-
 
 if __name__ == "__main__":
     main()
